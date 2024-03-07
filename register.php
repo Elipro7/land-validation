@@ -13,7 +13,7 @@
     </head>
 
     <body class="authentication-bg">
-
+<!-- to get better git -->
         <div class="position-absolute start-0 end-0 start-0 bottom-0 w-100 h-100">
             <svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 800 800'>
                 <g fill-opacity='0.22'>
