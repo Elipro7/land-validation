@@ -32,10 +32,11 @@
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                           <form >
+                                                           <form method="POST" action="">
+                                                            <!-- `land_issue_id`, `plot_no`, `reason`, `responsee` -->
                                                            <div class="mb-3">
-                                                                        <label for="pnumber" class="form-label">Plot Number</label>
-                                                                        <input type="text" id="pnumber" class="form-control" name="pnumber">
+                                                                        <label for="plot_no" class="form-label">Plot Number</label>
+                                                                        <input type="text" id="plot_no" class="form-control" name="plot_no">
                                                                     </div>
 
                                                                     <div class="mb-3">
@@ -44,13 +45,13 @@
                                                                     </div>
 
                                                                     <div class="mb-3">
-                                                                        <label for="example-textarea" class="form-label">Responsibles</label>
-                                                                        <textarea class="form-control" name="respons" id="example-textarea" rows="2"></textarea>
+                                                                        <label for="example-textarea" class="form-label">Responsiibles</label>
+                                                                        <textarea class="form-control" name="response" id="example-textarea" rows="2"></textarea>
                                                                     </div>
 
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                                        <button type="button" name="land-issues_btn" class="btn btn-primary">Save changes</button>
                                                                     </div>
                                                            </form>
                                                         </div>
@@ -59,14 +60,14 @@
                                                 </div>
                                         </div>
                 
-                                        <div class="table-responsive">
-                                            <table class="table dt-responsive nowrap w-100" id="basic-datatable">
+                                        <div class="table-responseive">
+                                            <table class="table dt-responseive nowrap w-100" id="basic-datatable">
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Plot No</th>
-                                                        <th>Reason</th>
-                                                        <th>Responsibles</th>
+                                                        <th>reason</th>
+                                                        <th>responseibles</th>
                                                         <th style="width: 75px;">Action</th>
                                                     </tr>
                                                 </thead>

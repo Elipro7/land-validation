@@ -1,3 +1,5 @@
+<?php include"root/process.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,18 +48,18 @@
                                     <p class="text-muted mb-4">Enter your email address and password to access admin panel.</p>
                                 </div>
 
-                                <form action="index" method="POST">
+                                <form action="" method="POST">
 
                                     <div class="mb-3">
-                                        <label for="emailaddress" class="form-label">Email address</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                        <label for="emailaddress" class="form-label">Email</label>
+                                        <input class="form-control" type="email" id="emailaddress" name='email' required="" placeholder="Enter your email">
                                     </div>
 
                                     <div class="mb-3">
                                         <a href="pages-recoverpw.html" class="text-muted float-end"><small>Forgot your password?</small></a>
                                         <label for="password" class="form-label">Password</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                                            <input type="password" id="password" class="form-control" name='' placeholder="Enter your password">
                                             <div class="input-group-text" data-password="false">
                                                 <span class="password-eye"></span>
                                             </div>
@@ -72,7 +74,7 @@
                                     </div>
 
                                     <div class="mb-3 mb-0 text-center">
-                                        <button class="btn btn-primary" type="submit"> Log In </button>
+                                        <button class="btn btn-primary" name='login_btn' type="submit"> Log In </button>
                                     </div>
 
                                 </form>

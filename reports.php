@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-location-box">
-                                    <h4 class="page-location">Land Titles</h4>
+                                    <h4 class="page-location">Reports</h4>
                                 </div>
                             </div>
                         </div>

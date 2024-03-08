@@ -32,10 +32,11 @@
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                           <form >
+                                                           <form method="POST" action="">
+                                                            <!-- `sales_id`, `plot_no`, `buyer`, `price`, `amount_paid`, `date`, `witness` -->
                                                            <div class="mb-3">
-                                                                        <label for="pnumber" class="form-label">Plot Number</label>
-                                                                        <input type="text" id="pnumber" class="form-control" name="pnumber">
+                                                                        <label for="plot_no" class="form-label">Plot Number</label>
+                                                                        <input type="text" id="plot_no" class="form-control" name="plot_no">
                                                                     </div>
 
                                                                     <div class="mb-3">
@@ -49,13 +50,13 @@
                                                                     </div>                                                
 
                                                                     <div class="mb-3">
-                                                                        <label for="amountpaid" class="form-label">Amount Paid</label>
-                                                                        <input type="text" id="doa" class="form-control" name="amountpaid">
+                                                                        <label for="amount_paid" class="form-label">Amount Paid</label>
+                                                                        <input type="text" id="amount_paid" class="form-control" name="amount_paid">
                                                                     </div>
 
                                                                      <div class="mb-3">
                                                                         <label for="date" class="form-label">Date of Transaction</label>
-                                                                        <input type="date" id="dot" class="form-control" name="dot">
+                                                                        <input type="date" id="date" class="form-control" name="date">
                                                                     </div>
 
                                                                     <div class="mb-3">
@@ -65,7 +66,7 @@
 
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                                        <button type="button" name="sales_btn" class="btn btn-primary">Save changes</button>
                                                                     </div>
                                                            </form>
                                                         </div>

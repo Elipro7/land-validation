@@ -6,15 +6,15 @@
                     <!-- Start Content-->
                     <div class="container-fluid">
 
-                        <!-- start page location -->
+                        <!-- start page plot_location -->
                         <div class="row">
                             <div class="col-12">
-                                <div class="page-location-box">
-                                    <h4 class="page-location">Land Titles</h4>
+                                <div class="page-plot_location-box">
+                                    <h4 class="page-plot_location">Land Titles</h4>
                                 </div>
                             </div>
                         </div>
-                        <!-- end page location -->
+                        <!-- end page plot_location -->
 
                         <div class="row">
                             <div class="col-12">
@@ -28,29 +28,30 @@
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-location" id="standard-modalLabel">New Land Title</h4>
+                                                                <h4 class="modal-plot_location" id="standard-modalLabel">New Land Title</h4>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                           <form >
+                                                           <form method="POST" action="">
+                                                            <!-- `plot_id`, `plot_no`, `plot_plot_owner`, `plot_plot_location`, `plot_plot_image`, `status` -->
                                                            <div class="mb-3">
-                                                                        <label for="pnumber" class="form-label">Plot Number</label>
-                                                                        <input type="text" id="pnumber" class="form-control" name="pnumber">
+                                                                        <label for="plot_no" class="form-label">Plot Number</label>
+                                                                        <input type="text" id="plot_no" class="form-control" name="plot_no">
                                                                     </div>
 
                                                                     <div class="mb-3">
-                                                                        <label for="owner" class="form-label">Owner</label>
-                                                                        <input type="text" id="owner" name="owner" class="form-control">
+                                                                        <label for="plot_owner" class="form-label">Owner</label>
+                                                                        <input type="text" id="plot_owner" name="plot_owner" class="form-control">
                                                                     </div>
 
                                                                     <div class="mb-3">
-                                                                        <label for="location" class="form-label">Location</label>
-                                                                        <input type="text" id="location" class="form-control" name="location">
+                                                                        <label for="plot_location" class="form-label">Location</label>
+                                                                        <input type="text" id="plot_location" class="form-control" name="plot_location">
                                                                     </div>                                                
 
                                                                     <div class="mb-3">
-                                                                        <label for="image" class="form-label">Image</label>
-                                                                        <input type="file" id="doa" class="form-control" name="image">
+                                                                        <label for="plot_image" class="form-label">Image</label>
+                                                                        <input type="file" id="doa" class="form-control" name="plot_image">
                                                                     </div>
 
                                                                     <div class="mb-3">
@@ -65,7 +66,7 @@
 
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                                        <button type="button" name="block-title_btn" class="btn btn-primary">Save changes</button>
                                                                     </div>
                                                            </form>
                                                         </div>
@@ -80,9 +81,9 @@
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Plot No</th>
-                                                        <th>Owner</th>
-                                                        <th>location</th>
-                                                        <th>Image</th>
+                                                        <th>plot_owner</th>
+                                                        <th>plot_location</th>
+                                                        <th>plot_image</th>
                                                         <th>Status</th>
                                                         <th style="width: 75px;">Action</th>
                                                     </tr>

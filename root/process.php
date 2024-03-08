@@ -7,20 +7,21 @@ foreach ($errors as $error) {
 }
 //working with login form submision
 
-if (isset($_POST['loginbtn'])) {
+if (isset($_POST['login_btn'])) {
 	trim(extract($_POST));
 	if (count($errors) == 0) {
 		$phone = $_POST['phone']; 
 		$password = sha1($password);
-		$result = $dbh->query("SELECT * FROM users WHERE phone = '$phone' AND password='$password'");
+		$result = $dbh->query("SELECT * FROM users WHERE email = '$email' AND password='$password'");
 		if ($result->rowCount() == 1) {
 			$row = $result->fetch(PDO::FETCH_OBJ);
-			//`userid`, `username`, `phone`, `password`, `u_status`, `role`, `date_registered``
-			$_SESSION['userid'] = $row->userid;
-			$_SESSION['username'] = $row->username;
-			$_SESSION['u_status'] = $row->u_status;
-			$_SESSION['role'] = $row->role;
-			$_SESSION['date_registered'] = $row->date_registered;
+			//`user_id`, `sname`, `email`, `password`, `dept`, `title`, `date`, `status`	
+			$_SESSION['user_id'] = $row->user_id;
+			$_SESSION['sname'] = $row->sname;
+			$_SESSION['dept'] = $row->dept;
+			$_SESSION['title'] = $row->title;
+			$_SESSION['date'] = $row->date;
+			$_SESSION['status'] = $row->status;
 			//=========================================================
 			if ($result->rowCount() > 0) {
 				echo "<script>
@@ -30,43 +31,43 @@ if (isset($_POST['loginbtn'])) {
 			}else{
 				echo "<script>
 				alert('Login failed, please check your login details again');
-				window.location = '".SITE_URL."';
+				window.location = '".SITE_URL."/login';
 				</script>";
 			}
 
 		}else{
 			echo "<script>
 				alert('Wrong number or password');
-				window.location = '".SITE_URL."';
+				window.location = '".SITE_URL."/login';
 				</script>";
 		}
 	}
-}elseif(isset($_POST['register'])){
+}elseif(isset($_POST['register_btn'])){
 	trim(extract($_POST));
 	if (count($errors) == 0) {
 	    //insert record to mysql table...
-	    //`userid`, `username`, `phone`, `password`, `u_status`, `role`, `date_registered`
-	    $check = $dbh->query("SELECT phone FROM users WHERE phone='$phone' ")->fetchColumn();
+	    //`user_id`, `sname`, `email`, `password`, `dept`, `title`, `date`, `status`
+	    $check = $dbh->query("SELECT email FROM users WHERE email='$email' ")->fetchColumn();
 	  if(!$check){
 	  	// $reset_password = $password; 
 		$password = sha1($password);
-	    $sql = "INSERT INTO users VALUES(NULL,'$username','$phone','$password',0,'$role','$today')";
+	    $sql = "INSERT INTO users VALUES(NULL,'$sname','$email','$password','$dept','$title',$date',',0)";
 	    $result = dbCreate($sql);
 	    if($result == 1){
 	    	echo "<script>
 	          	alert('Registration is Successful');
-	        	window.location = '".SITE_URL."/login.php';
+	        	window.location = '".SITE_URL."/login';
 	          	</script>";
 	    }else{
 	        echo "<script>
 		      alert('User registration failed');
-		   	  window.location = '".SITE_URL."/register.php';
+		   	  window.location = '".SITE_URL."/register';
 		      </script>";
 	    }
 	 }else{
 	      echo "<script>
 	        alert('Username already registered');
-	        window.location = '".SITE_URL."/register.php';
+	        window.location = '".SITE_URL."/register';
 	        </script>";
 	 	}
 	}

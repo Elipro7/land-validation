@@ -367,7 +367,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="apps-calendar.html" class="side-nav-link">
+                            <a href="location" class="side-nav-link">
                                 <i class="uil-map-marker"></i>
                                 <span> Location</span>
                             </a>

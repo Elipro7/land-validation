@@ -6,15 +6,15 @@
                     <!-- Start Content-->
                     <div class="container-fluid">
 
-                        <!-- start page from -->
+                        <!-- start page location -->
                         <div class="row">
                             <div class="col-12">
-                                <div class="page-from-box">
-                                    <h4 class="page-from">Investers</h4>
+                                <div class="page-location-box">
+                                    <h4 class="page-location">Investers</h4>
                                 </div>
                             </div>
                         </div>
-                        <!-- end page from -->
+                        <!-- end page location -->
 
                         <div class="row">
                             <div class="col-12">
@@ -28,14 +28,16 @@
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-from" id="standard-modalLabel">New Invester</h4>
+                                                                <h4 class="modal-location" id="standard-modalLabel">New Invester</h4>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                           <form >
+                                                           <form method="POST" action="">
+
+                                                           <!-- `inves_id`, `inves_name`, `plot_no`, `location`, `inventment_type`, `id` -->
                                                            <div class="mb-3">
-                                                                        <label for="uname" class="form-label">Username</label>
-                                                                        <input type="text" id="uname" class="form-control" name="uname">
+                                                                        <label for="inves_name" class="form-label">Username</label>
+                                                                        <input type="text" id="inves_name" class="form-control" name="inves_name">
                                                                     </div>
 
                                                                      <div class="mb-3">
@@ -44,33 +46,28 @@
                                                                      </div>
 
                                                                     <div class="mb-3">
-                                                                        <label for="dept" class="form-label">Email</label>
-                                                                        <input type="email" id="dept" name="email" class="form-control" placeholder="xx@gmail.com">
+                                                                        <label for="plot_no" class="form-label">Plot Number</label>
+                                                                        <input type="text" id="plot_no" name="plot_no" class="form-control">
                                                                     </div>
 
                                                                     <div class="mb-3">
-                                                                        <label for="plot-no" class="form-label">Plot Number</label>
-                                                                        <input type="text" id="plot-no" name="plot-no" class="form-control">
-                                                                    </div>
-
-                                                                    <div class="mb-3">
-                                                                        <label for="from" class="form-label">Nationality</label>
-                                                                        <input type="text" id="from" class="form-control" name="from" placeholder="Kampala/Uganda">
+                                                                        <label for="location" class="form-label">Nationality</label>
+                                                                        <input type="text" id="location" class="form-control" name="location" placeholder="Kampala/Uganda">
                                                                     </div>                                                
 
                                                                     <div class="mb-3">
-                                                                        <label for="invest-type" class="form-label">Investment Type</label>
-                                                                        <input type="text" class="form-control" name="invest-type">
+                                                                        <label for="inventment_type" class="form-label">Investment Type</label>
+                                                                        <input type="text" class="form-control" name="inventment_type">
                                                                     </div>
 
                                                                     <div class="mb-3">
-                                                                        <label for="info" class="form-label">Identification</label>
-                                                                        <input type="text" class="form-control" placeholder="Nin_No/Passport" name="info">
+                                                                        <label for="id" class="form-label">Identification</label>
+                                                                        <input type="text" class="form-control" placeholder="Nin_No/Passport" name="id">
                                                                     </div>
 
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                                        <button type="button" name="invester_btn" class="btn btn-primary">Save changes</button>
                                                                     </div>
                                                            </form>
                                                         </div>
@@ -86,7 +83,6 @@
                                                         <th>ID</th>
                                                         <th>Name</th>
                                                         <th>Image</th>
-                                                        <th>Email</th>
                                                         <th>Plot Number</th>
                                                         <th>Nationality</th>
                                                         <th>Investment Type</th>
