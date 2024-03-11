@@ -7,7 +7,7 @@ $dtime = date("Y-m-d H:i:s A", time());
 $now = date("Y-m-d H:i:s", time());
 $strtime = date("d-m-Y h:i:s A", time());
 $today = date("Y-m-d");
-defined ("APP_DIR") or define("APP_DIR","career-app");
+defined ("APP_DIR") or define("APP_DIR","land-validation");
 defined ("DB_URL") or define("DB_URL", $_SERVER['HTTP_HOST']);
 defined ("DS") or define("DS", DIRECTORY_SEPARATOR);
 defined ("BASE_URL") or define("BASE_URL", $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME']);
@@ -16,11 +16,9 @@ switch(DB_URL){
 		defined ("DB_SERVER") or define("DB_SERVER", 'localhost');
 		defined ("DB_USER") or define("DB_USER", "root");
 		defined ("DB_PASS") or define("DB_PASS", "");
-		defined ("DB_NAME") or define("DB_NAME", "career_app");
-		// defined ("SITE_URL") or define("SITE_URL", BASE_URL.'/'.APP_DIR.'/');
-		// defined ("HOME_URL") or define("HOME_URL", BASE_URL.'/'.APP_DIR.'/dash');
-		defined ("SITE_URL") or define("SITE_URL", 'http://localhost/career-app');
-		defined ("HOME_URL") or define("HOME_URL", 'http://localhost/career-app/dash');
+		defined ("DB_NAME") or define("DB_NAME", "land");
+		defined ("SITE_URL") or define("SITE_URL", 'http://localhost/land-validation');
+		defined ("HOME_URL") or define("HOME_URL", 'http://localhost/land-validation/dash');
 	break;
 	case 'production': 
 		defined ("DB_SERVER") or define("DB_SERVER", 'localhost');
@@ -32,14 +30,14 @@ switch(DB_URL){
 		defined ("DB_SERVER") or define("DB_SERVER", 'localhost');
 		defined ("DB_USER") or define("DB_USER", "root");
 		defined ("DB_PASS") or define("DB_PASS", "");
-		defined ("DB_NAME") or define("DB_NAME", "career_app");
-		defined ("SITE_URL") or define("SITE_URL", 'http://localhost/career-app');
-		defined ("HOME_URL") or define("HOME_URL", 'http://localhost/career-app/dash');
+		defined ("DB_NAME") or define("DB_NAME", "land");
+		defined ("SITE_URL") or define("SITE_URL", 'http://localhost/land-validation');
+		defined ("HOME_URL") or define("HOME_URL", 'http://localhost/land-validation/dash');
 }
 
  try{
- 	// $dbcon = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME); 
-	// $con = new mysqli(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+ 	$dbcon = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME); 
+	$con = new mysqli(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 	$dbh = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASS, array(PDO::ATTR_PERSISTENT => true)); 
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
