@@ -233,58 +233,31 @@ elseif (isset($_POST['update_title_btn'])){
             window.location = '".SITE_URL."/block-title';
             </script>";
 	}
-}elseif (isset($_POST['update_nurses_btn'])){
+}
+// updating sales
+// `sales_id`, `plot_no`, `buyer`, `price`, `amount_paid`, `date`, `witness` 
+
+elseif (isset($_POST['update_sales_btn'])){
 	trim(extract($_POST));
-    $sql = $dbh->query("UPDATE nurses SET nursename = '$nursename' WHERE nurseid = '$nurseid' ");
+    $sql = $dbh->query("UPDATE sales SET plot_no = '$plot_no', buyer = '$buyer', price = '$price', amount_paid = '$amount_paid', date = '$date', witness = '$witness'  WHERE sales_id = '$sales_id  ' ");
     if ($sql) {
         echo "<script>
-            alert('Nurses updated Successfully');
-            window.location = '".HOME_URL."?nurses';
+            alert('Sales updated Successfully');
+            window.location = '".SITE_URL."/sales';
             </script>";
 	}
-}elseif (isset($_POST['update_manuf_btn'])){
+
+}
+
+// handling updates for investors
+// `inves_id`, `inves_name`, `invest_image`, `invest_email`, `plot_no`, `invest_nationality`, `inventment_type`, `id`
+elseif (isset($_POST['update_investors_btn'])){
 	trim(extract($_POST));
-    $sql = $dbh->query("UPDATE manufacturer  SET manufname = '$manufname', country = '$country', city = '$city' WHERE manufid = '$manufid' ");
+    $sql = $dbh->query("UPDATE investor SET inves_name = '$inves_name', invest_image = '$invest_image', invest_email = '$invest_email', plot_no = '$plot_no', invest_nationality = '$inventment_type', id = '$id'   WHERE inves_id = '$inves_id' ");
     if ($sql) {
         echo "<script>
-            alert('manufacturer updated Successfully');
-            window.location = '".HOME_URL."?manufucturer';
-            </script>";
-	}
-}elseif (isset($_POST['update_drug_btn'])){
-	trim(extract($_POST));
-    $sql = $dbh->query("UPDATE drugs SET drugname = '$drugname' WHERE drugid = '$drugid' ");
-    if ($sql) {
-        echo "<script>
-            alert('Drug updated Successfully');
-            window.location = '".HOME_URL."?drugs';
-            </script>";
-	}
-}elseif (isset($_POST['update_patient_btn'])){
-	trim(extract($_POST));
-    $sql = $dbh->query("UPDATE patients SET pname = '$pname', sex = '$sex', dob = '$dob', district = '$district' WHERE pid = '$pid' ");
-    if ($sql) {
-        echo "<script>
-            alert('Patient updated Successfully');
-            window.location = '".HOME_URL."?patients';
-            </script>";
-	}
-}elseif (isset($_POST['update_diagnosis_btn'])){
-	trim(extract($_POST));
-    $sql = $dbh->query("UPDATE diagnosis  SET diagname = '$diagname' WHERE diagid = '$diagid' ");
-    if ($sql) {
-        echo "<script>
-            alert('Diagnosis updated Successfully');
-            window.location = '".HOME_URL."?diagnosis';
-            </script>";
-	}
-}elseif (isset($_POST['update_appointments_btn'])){
-	trim(extract($_POST));
-    $sql = $dbh->query("UPDATE appointments  SET message = '$message', phone = '$phone', email = '$email' WHERE appt_id = '$appt_id' ");
-    if ($sql) {
-        echo "<script>
-            alert('Appointments  updated Successfully');
-            window.location = '".HOME_URL."?appointments ';
+            alert('Investor updated Successfully');
+            window.location = '".SITE_URL."/investors';
             </script>";
 	}
 }

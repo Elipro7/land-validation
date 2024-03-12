@@ -36,6 +36,7 @@ include "header.php";
                                         <div class="modal-body">
                                             <!-- `inves_id`, `inves_name`, `invest_image`, `invest_email`, `plot_no`, `invest_nationality`, `inventment_type`, `id` -->
                                        <form method="POST">
+                                        <input type="hidden" name="inves_id" value="<?=$row['inves_id'] ?>">
                                        <div class="mb-3">
                                                     <label for="inves_name" class="form-label">Investor Name</label>
                                                     <input type="text" id="inves_name" class="form-control" name="inves_name">
@@ -112,11 +113,14 @@ include "header.php";
                                 <td><?=$row['inventment_type'] ?></td>
                                 <td><?=$row['id'] ?></td>
                                 <td>
+                                    <a href="#update_modal4<?=$row['inves_id']?>" data-bs-toggle="modal" class="btn btn-primary">Update</a>
                                     <a onclick="return confirm('Do you want to delete this Investor?');" href="?del-investor=<?=$row['inves_id']?>" class="btn btn-danger">Delete</a>
                                     <button type="button" class="btn btn-success viewInvestor" data-toggle="modal" data-target="#careerModal" data-career-id="<?=$row['inves_id']?>">View Career</button>
                                 </td>
                             </tr>
-                            <?php } ?>
+                            <?php
+                                include 'update.php';
+                             } ?>
                         </tbody>
                         </table>
                     </div>

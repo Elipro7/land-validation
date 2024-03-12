@@ -35,6 +35,8 @@ include "header.php";
                                             </div>
                                             <div class="modal-body">
                                            <form method="POST" action="">
+                                             <input type="hidden" name="sales_id" value="<?=$row['sales_id'] ?>">
+
                                             <!-- `sales_id`, `plot_no`, `buyer`, `price`, `amount_paid`, `date`, `witness` -->
                                            <div class="mb-3">
                                                         <label for="pnumber" class="form-label">Plot Number</label>
@@ -106,11 +108,14 @@ include "header.php";
                                     <td><?=$row['date'] ?></td>
                                     <td><?=$row['witness'] ?></td>
                                     <td>
+                                        <a href="#update_modal5<?=$row['sales_id']?>" data-bs-toggle="modal" class="btn btn-primary">Update</a>
                                         <a onclick="return confirm('Do you want to delete this Sales?');" href="?del-sales=<?=$row['sales_id']?>" class="btn btn-danger">Delete</a>
                                         <button type="button" class="btn btn-success viewCareer" data-toggle="modal" data-target="#careerModal" data-career-id="<?=$row['sales_id']?>">View Career</button>
                                     </td>
                                 </tr>
-                                <?php } ?>
+                                <?php
+                                    include 'update.php';
+                                 } ?>
                             </tbody>
 
                             </table>

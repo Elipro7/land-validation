@@ -139,7 +139,118 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" name="update_title_btn" class="btn btn-primary">Save changes</button>
+                        <button type="submit" name="update_title_btn" class="btn btn-primary">Update Block Title</button>
+                    </div>
+           </form>
+        </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<!-- handling sales update -->
+<div id="update_modal5<?=$row['sales_id']?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-price" id="standard-modalLabel">New sales</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+           <form method="POST" action="">
+            <input type="hidden" name="sales_id" value="<?=$row['sales_id'] ?>">
+            <!-- `sales_id`, `plot_no`, `buyer`, `price`, `amount_paid`, `date`, `witness` -->
+           <div class="mb-3">
+                        <label for="pnumber" class="form-label">Plot Number</label>
+                        <input type="text" id="pnumber" class="form-control" name="plot_no" value="<?=$row['plot_no'] ?>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="buyer" class="form-label">Buyer</label>
+                        <input type="text" id="buyer" name="buyer" class="form-control" value="<?=$row['buyer'] ?>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" id="price" class="form-control" name="price" value="<?=$row['price'] ?>">
+                    </div>                                                
+
+                    <div class="mb-3">
+                        <label for="amountpaid" class="form-label">Amount Paid</label>
+                        <input type="text" id="doa" class="form-control" name="amount_paid" value="<?=$row['amount_paid'] ?>">
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="date" class="form-label">Date of Transaction</label>
+                        <input type="date" id="dot" class="form-control" name="date" value="<?=$row['date'] ?>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="witness" class="form-label">Witness</label>
+                        <input type="text" id="witness" class="form-control" name="witness" value="<?=$row['witness'] ?>">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="update_sales_btn" class="btn btn-primary">Update Sales</button>
+                    </div>
+           </form>
+        </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<!-- Handling Update for Investors -->
+<div id="update_modal4<?=$row['inves_id']?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-from" id="standard-modalLabel">New Investors</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- `inves_id`, `inves_name`, `invest_image`, `invest_email`, `plot_no`, `invest_nationality`, `inventment_type`, `id` -->
+           <form method="POST">
+            <input type="hidden" name="inves_id" value="<?=$row['inves_id'] ?>">
+           <div class="mb-3">
+                        <label for="inves_name" class="form-label">Investor Name</label>
+                        <input type="text" id="inves_name" class="form-control" name="inves_name" value="<?=$row['inves_name'] ?>">
+                    </div>
+
+                     <div class="mb-3">
+                         <label for="invest_image" class="form-label">Image</label>
+                         <input class="form-control" id="invest_image" type="file" name="invest_image" value="<?=$row['invest_image'] ?>">
+                     </div>
+
+                    <div class="mb-3">
+                        <label for="invest_email" class="form-label">Email</label>
+                        <input type="email" id="invest_email" name="invest_email" class="form-control" value="<?=$row['invest_email'] ?>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="plot_no" class="form-label">Plot Number</label>
+                        <input type="text" id="plot_no" name="plot_no" class="form-control" value="<?=$row['plot_no'] ?>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="invest_nationality" class="form-label">Nationality</label>
+                        <input type="text" id="invest_nationality" class="form-control" name="invest_nationality" value="<?=$row['invest_nationality'] ?>">
+                    </div>                                                
+
+                    <div class="mb-3">
+                        <label for="inventment_type" class="form-label">Investment Type</label>
+                        <input type="text" class="form-control" id="inventment_type" name="inventment_type" value="<?=$row['inventment_type'] ?>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="info" class="form-label">Identification</label>
+                        <input type="text" class="form-control"value="<?=$row['id'] ?>" name="id">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="update_investors_btn" class="btn btn-primary">Update Investor</button>
                     </div>
            </form>
         </div>
